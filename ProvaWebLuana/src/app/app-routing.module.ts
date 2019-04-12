@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { VeiculoComponent } from './cadastro/veiculo/veiculo.component';
 
 const routes: Routes = [
-  {path: 'veiculo', component: VeiculoComponent},
+  {path: 'veiculo', component: VeiculoComponent}
   //{path: '', redirectTo: 'home'},
  // {path: '**', component: PagenotfoundComponent}
 

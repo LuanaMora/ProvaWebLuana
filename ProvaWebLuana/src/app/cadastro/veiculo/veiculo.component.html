@@ -45,15 +45,27 @@
 
   <div class="col s12 m4 l4">
     <mat-form-field>
-      <input matInput placeholder="cor" type="text" [(ngModel)]="veiculoModel.cor" required>
+      <mat-label>Cor</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let cor of coresList" [value]="cor.descricao">
+          {{cor.descricao}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+  </div>
+</div>
+
+<div class="row footer-btn">
+  <div class="button-row col s12">
+    <button mat-raised-button color="green" (click)="salvarVeiculo()">Salvar</button>
+    <!--<button *ngIf="edicao" mat-raised-button color="green" (click)="atualizar()">Atualizar</button>-->
   </div>
 </div>
 
 
 
 
-<!--Aplicar Filtros
+<!--Aplicar Filtros-->
 <div class="row heading">
   <div class="col s12">
     <h2 class="title">Lista Pessoas</h2>
@@ -67,26 +79,25 @@
       </div>
     </div>
   </div>
-</div>-->
+</div>
 
 <!--Tabela-->
 <div class="row">
   <div class="col s12 m12 l12">
     <mat-table #table [dataSource]="dataSource" matSort class="table-striped">
 
-      <ng-container matColumnDef="actionsColumn">
-        <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-icon-button>
-            <mat-icon class="link_action" svgIcon="form-trash" matTooltip="Excluir"
-              (click)="excluir(element.veiculoId)"></mat-icon>
-          </button>
-          <button mat-icon-button>
-            <mat-icon class="link_action" svgIcon="form-edit" matTooltip="Editar" (click)="editar(element.veiculoId)">
-            </mat-icon>
-          </button>
-        </mat-cell>
-      </ng-container>
+
+        <ng-container matColumnDef="actionsColumn">
+            <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button mat-icon-button>
+                    <mat-icon class="link_action" svgIcon="form-trash" matTooltip="Excluir" (click)="excluir(element.veiculoId)"></mat-icon>
+                </button>  
+                <button mat-icon-button>
+                    <mat-icon class="link_action" svgIcon="form-edit" matTooltip="Editar" (click)="editar(element.veiculoId)"></mat-icon>
+                </button>
+            </mat-cell>
+          </ng-container>   
 
       <!-- Codigo -->
       <ng-container matColumnDef="veiculoId">
