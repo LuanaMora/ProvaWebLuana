@@ -7,7 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VeiculoComponent } from './cadastro/veiculo/veiculo.component';
 
 import { MatInputModule, MatRadioModule, MatButtonModule, 
-  MatTableModule, MatIconModule, MatPaginatorModule, MatSort, MatSortModule, MatExpansionModule, MatSelectModule } from '@angular/material';
+  MatTableModule, MatIconModule, MatPaginatorModule, MatSortModule, MatExpansionModule, MatSelectModule } from '@angular/material';
+
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,19 +20,20 @@ import { MatInputModule, MatRadioModule, MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule, 
-    
-    MatInputModule, //Daqui pra abaixo material
+
+    MatInputModule,
     MatRadioModule,
-    MatButtonModule,
+    MatButtonModule, 
     MatTableModule,
     MatIconModule,
+    HttpClientModule,
     MatPaginatorModule,
-    MatSort,
     MatSortModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [HttpClient], //Adicionei aqui (icone)
   bootstrap: [AppComponent]
 })
 export class AppModule { }
