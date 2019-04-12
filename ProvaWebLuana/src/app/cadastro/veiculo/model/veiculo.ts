@@ -8,5 +8,5 @@ export class Veiculo{
     public marca: String;
     public modelo: String;
     public ano: number;
-   public cor: Cor;
+    public cor: Cor;
 }

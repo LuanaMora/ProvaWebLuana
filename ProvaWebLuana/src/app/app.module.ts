@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VeiculoComponent } from './cadastro/veiculo/veiculo.component';
 
+import { MatInputModule, MatRadioModule, MatButtonModule, 
+  MatTableModule, MatIconModule, MatPaginatorModule, MatSort, MatSortModule, MatExpansionModule, MatSelectModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +17,18 @@ import { VeiculoComponent } from './cadastro/veiculo/veiculo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, 
+    
+    MatInputModule, //Daqui pra abaixo material
+    MatRadioModule,
+    MatButtonModule,
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSort,
+    MatSortModule,
+    MatExpansionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
