@@ -78,9 +78,6 @@ export class VeiculoComponent implements OnInit {
       data.marca.toString().indexOf(filter) != -1 ||
       data.ano.toString().indexOf(filter) != -1 ||
       data.cor.toString().toLowerCase().indexOf(filter) != -1;
-
-
-
     this.dataSource.filter = valor;
   }
 
@@ -108,5 +105,4 @@ export class VeiculoComponent implements OnInit {
     this.dataSource.paginator = this.paginatorCustom;
     this.dataSource.sort = this.sort;
   }
-
 }
