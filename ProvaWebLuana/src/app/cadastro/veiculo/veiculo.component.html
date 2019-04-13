@@ -73,8 +73,8 @@
       <div class="search">
         <mat-form-field>
           <mat-icon svgIcon="slidenav-search"></mat-icon>
-          <input matInput id="pesquisarId" name="pesquisar" placeholder="Pesquisar" 
-          (keyup)="aplicarFiltro($event.target.value)">
+          <input matInput id="pesquisarId" name="pesquisar" placeholder="Pesquisar"
+            (keyup)="aplicarFiltro($event.target.value)">
         </mat-form-field>
       </div>
     </div>
@@ -85,19 +85,19 @@
 <div class="row">
   <div class="col s12 m12 l12">
     <mat-table #table [dataSource]="dataSource" matSort class="table-striped">
-
-
-        <ng-container matColumnDef="actionsColumn">
-            <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
-            <mat-cell *matCellDef="let element">
-                <button mat-icon-button>
-                    <mat-icon class="link_action" svgIcon="form-trash" matTooltip="Excluir" (click)="excluir(element.veiculoId)"></mat-icon>
-                </button>  
-                <button mat-icon-button>
-                    <mat-icon class="link_action" svgIcon="form-edit" matTooltip="Editar" (click)="editar(element.veiculoId)"></mat-icon>
-                </button>
-            </mat-cell>
-          </ng-container>   
+      <ng-container matColumnDef="actionsColumn">
+        <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button>
+            <mat-icon class="link_action" svgIcon="form-trash" matTooltip="Excluir"
+              (click)="excluir(element.veiculoId)"></mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon class="link_action" svgIcon="form-edit" matTooltip="Editar" (click)="editar(element.veiculoId)">
+            </mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
 
       <!-- Codigo -->
       <ng-container matColumnDef="veiculoId">
