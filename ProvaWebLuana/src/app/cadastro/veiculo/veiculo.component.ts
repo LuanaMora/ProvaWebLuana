@@ -83,8 +83,8 @@ export class VeiculoComponent implements OnInit {
 
     this.dataSource.filter = valor;
   }
-  
-  
+
+
 
   editar(veiculoId: number) {
     let veiculoUpdate;
@@ -98,12 +98,15 @@ export class VeiculoComponent implements OnInit {
   }
 
   excluir(veiculoId: number) {
-    let veiculoDelete;
-    this.veiculoList.forEach(item => {
-      if (item.veiculoId == veiculoId) {
-        veiculoDelete = item;
-        this.veiculoList.splice(veiculoDelete, 1);
-      }
-    });
+    console.log("chamou metodo excluir " + veiculoId);
+    this.veiculoList.splice(this.veiculoList.findIndex(d => d.veiculoId === veiculoId), 1);
+    this.atualizaTable();
   }
+
+  atualizaTable() {
+    this.dataSource = new MatTableDataSource<Veiculo>(this.veiculoList);
+    this.dataSource.paginator = this.paginatorCustom;
+    this.dataSource.sort = this.sort;
+  }
+
 }
