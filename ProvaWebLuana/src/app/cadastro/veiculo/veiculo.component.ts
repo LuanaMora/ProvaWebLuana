@@ -76,6 +76,7 @@ export class VeiculoComponent implements OnInit {
       data.renavan.toString().indexOf(filter) != -1 ||
       data.chassi.toLowerCase().indexOf(filter) != -1 ||
       data.marca.toString().indexOf(filter) != -1 ||
+      data.modelo.toString().indexOf(filter) != -1 ||
       data.ano.toString().indexOf(filter) != -1 ||
       data.cor.toString().toLowerCase().indexOf(filter) != -1;
     this.dataSource.filter = valor;
