@@ -75,33 +75,35 @@ export class VeiculoComponent implements OnInit {
       data.placa.toLowerCase().indexOf(filter) != -1 ||
       data.renavan.toString().indexOf(filter) != -1 ||
       data.chassi.toLowerCase().indexOf(filter) != -1 ||
-      data.marca.toLowerCase().indexOf(filter) != -1 ||
+      data.marca.toString().indexOf(filter) != -1 ||
       data.ano.toString().indexOf(filter) != -1 ||
-      data.cor.toString().indexOf(filter) != -1;
+      data.cor.toString().toLowerCase().indexOf(filter) != -1;
+
 
 
     this.dataSource.filter = valor;
   }
+  
+  
 
   editar(veiculoId: number) {
-    let pessoaUpdate;
+    let veiculoUpdate;
     this.veiculoList.forEach(item => {
       if (item.veiculoId == veiculoId) {
-        pessoaUpdate = item;
+        veiculoUpdate = item;
+        this.veiculoList.splice(veiculoUpdate, 1);
       }
     });
-    this.veiculoModel = pessoaUpdate;
+    this.veiculoModel = veiculoUpdate;
   }
 
   excluir(veiculoId: number) {
-    let id = this.veiculoSelId;
-    let veiculoSelLocal;
+    let veiculoDelete;
     this.veiculoList.forEach(item => {
       if (item.veiculoId == veiculoId) {
-        veiculoSelLocal = item;
-        this.veiculoList.splice(veiculoSelLocal, 1);
+        veiculoDelete = item;
+        this.veiculoList.splice(veiculoDelete, 1);
       }
     });
-
   }
 }

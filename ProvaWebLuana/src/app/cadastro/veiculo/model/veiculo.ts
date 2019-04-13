@@ -2,11 +2,11 @@ import { Cor } from "./cor";
 
 export class Veiculo{
     public veiculoId: number;
-    public placa: String;
+    public placa: string;
     public renavan: number;
-    public chassi: String;
-    public marca: String;
-    public modelo: String;
+    public chassi: string;
+    public marca: string;
+    public modelo: string;
     public ano: number;
     public cor: Cor;
 }
